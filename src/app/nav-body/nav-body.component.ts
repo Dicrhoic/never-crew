@@ -13,8 +13,8 @@ export class NavBodyComponent {
  readFile()
  {
    
-  var fs = require('fs'),
-  xml2js = require('xml2js');
+ // var fs = require('fs'),
+  //xml2js = require('xml2js');
 
  var parser = new xml2js.Parser();
  fs.readFile("/assests" + '/SSRCharacters.xml', function(err, data) {
