@@ -70,7 +70,7 @@ export class NavMenuComponent {
   openNav() {
     if(document.getElementById('tabVerContent') != null)
     {
-      document.getElementById('tabVerContent').style.display = 'none';
+      document.getElementById('tabVerContent').style.display = 'block';
     }
     else
     {
