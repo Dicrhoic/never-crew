@@ -16,10 +16,12 @@ export class NavMenuComponent {
   private http: HttpClient;
   @ViewChild(NavBodyComponent, { read: ElementRef }) private child: ElementRef;
 
-  ngAfterViewInit() {
-    let element = this.child.nativeElement;
-    console.log("Child component", element, "width: " + element.offsetWidth, "height: " + element.offsetHeight);
-  }
+  //constructor(private NavBodyComponent: NavBodyComponent) {}
+
+  //ngAfterViewInit() {
+    //const element = this.child.nativeElement;
+    //this.NavBodyComponent.navElement = this.child.nativeElement;
+  //}
 
   loadXML() {
     /*Read Data*/
@@ -66,8 +68,14 @@ export class NavMenuComponent {
   }
 
   openNav() {
-    var doc = 
-    document.getElementById('tabVerContent').style.display = 'block';
+    if(document.getElementById('tabVerContent') != null)
+    {
+      document.getElementById('tabVerContent').style.display = 'none';
+    }
+    else
+    {
+      console.log("Cannot access data");
+    }
   }
 
   loadLoginForm() {
