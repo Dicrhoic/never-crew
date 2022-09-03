@@ -1,0 +1,33 @@
+<title>GBF Buddy Homepage</title>
+<h1>Homepage</h1>
+<div class="menuNavBar">
+    <button class="tablinks" (click)="openNav()">Gacha Log</button>
+    <button class="tablinks">GW Teams</button>  
+    <button class="tablinks" (click)="loadLoginForm()" id="loginBtn">Login</button>
+    <button class="tablinks" id="signoutBtn" [style.display]="'none'" onclick="logout()">Log out</button>
+</div>
+<div id="login" class="modal">
+    <form class="modal-content animate">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="https://gbf.wiki/images/6/66/Summon_b_2040411000.png" alt="Avatar" class="avatar">
+      </div>
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" id="username" required>
+  
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" id="password" required>
+          
+        <button type="button" class="loginButton" onclick="loginAuth()">Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('login').style.display='none'" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#" (click)="helpPass()">password?</a></span>
+      </div>
+    </form>
+</div>
+<app-nav-body></app-nav-body>
