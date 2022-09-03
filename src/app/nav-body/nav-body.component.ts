@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-nav-body',
@@ -6,11 +6,5 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./nav-body.component.css'],
 })
 export class NavBodyComponent {
-  public navElement: HTMLElement;
 
-  @ViewChild(NavBodyComponent, { read: ElementRef }) private navBodyEle: ElementRef;
-
-  ngAfterViewInit() {
-    //const navElement = this.navBodyEle.nativeElement;
-  }
 }

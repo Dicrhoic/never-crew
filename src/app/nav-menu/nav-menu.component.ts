@@ -68,9 +68,9 @@ export class NavMenuComponent {
   }
 
   openNav() {
-    if(document.getElementById('tabVerContent') != null)
+    if(document.getElementById('GachaLog') != null)
     {
-      document.getElementById('tabVerContent').style.display = 'block';
+      document.getElementById('GachaLog').style.display = 'block';
     }
     else
     {
