@@ -16,6 +16,11 @@ export class NavMenuComponent {
   private http: HttpClient;
   @ViewChild(NavBodyComponent, { read: ElementRef }) private child: ElementRef;
 
+  ngAfterViewInit() {
+    let element = this.child.nativeElement;
+    console.log("Child component", element, "width: " + element.offsetWidth, "height: " + element.offsetHeight);
+  }
+
   loadXML() {
     /*Read Data*/
     this.http
