@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router} from '@angular/router';
 declare var require: any;
 
 @Component({
@@ -9,17 +10,24 @@ declare var require: any;
 export class NavBodyComponent {
 
 
+
+
   readFile() {
+    var __dirname = "./";
     var fs = require('fs'),
       xml2js = require('xml2js');
+      var parser = new xml2js.Parser();
 
-    var parser = new xml2js.Parser();
-    fs.readFile('../db/SSRCharacters.xml', function (err, data) {
-      parser.parseString(data, function (err, result) {
-        console.dir(result);
-        console.log('Done');
+      fs.readFile(__dirname + 'gachaLog.xml', function(err, data) {
+        if(err)
+        {
+          console.log(err);
+        }
+          parser.parseString(data, function (err, result) {
+              console.dir(result);
+              console.log('Done');
+          });
       });
-    });
   }
   loadCharacterDropdown()
   {
