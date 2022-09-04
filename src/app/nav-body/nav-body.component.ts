@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router} from '@angular/router';
-import characters from '../..db/SSRCharacters.json';
 declare var require: any;
 
 @Component({
