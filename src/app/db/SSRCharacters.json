@@ -1,0 +1,16 @@
+{
+  "characters": [
+    {
+      "series": "Premium",
+      "name": "Abby",
+      "element": "fire",
+      "image": "https://gbf.wiki//images/thumb/2/27/Npc_m_3040284000_01.jpg/150px-Npc_m_3040284000_01.jpg"
+    },
+    {
+      "series": "Premium",
+      "name": "Aglovale",
+      "element": "water",
+      "image": "https://gbf.wiki//images/thumb/6/63/Npc_m_3040192000_01.jpg/150px-Npc_m_3040192000_01.jpg"
+    }
+  ]
+}
