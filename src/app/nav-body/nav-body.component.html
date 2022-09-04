@@ -28,6 +28,7 @@
     <div id="characterAdderSeg">
       <label for="characterList">SSR Character obtained</label>
       <select id="characterList" name="characterList" size="1"></select>
+      <option  *ngFor="let character of characterData.characters.character" [ngValue]="charater">{{character.name}}></option>
       <button id="characterObtained" onclick="addCharacterToWall()">
         Add Character
       </button>
