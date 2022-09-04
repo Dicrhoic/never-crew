@@ -9,16 +9,13 @@ declare var require: any;
 })
 export class NavBodyComponent {
 
-
-
-
   readFile() {
-    var __dirname = "../db/";
+    var __dirname = "../";
     var fs = require('fs'),
       xml2js = require('xml2js');
       var parser = new xml2js.Parser();
 
-      fs.readFile(__dirname + 'gachaLog.xml', function(err, data) {
+      fs.readFile(__dirname + 'test.xml', function(err, data) {
         if(err)
         {
           console.log(err);
