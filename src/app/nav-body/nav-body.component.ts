@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router} from '@angular/router';
+import characters from '../db/SSRCharacters.json';
 declare var require: any;
 
 @Component({
@@ -10,15 +11,19 @@ declare var require: any;
 export class NavBodyComponent {
 
   readFile() {
-    var __dirname = "../";
+    var __dirname = "./";
+    var fileName = (__dirname + 'test.xml');
     var fs = require('fs'),
       xml2js = require('xml2js');
       var parser = new xml2js.Parser();
-
-      fs.readFile(__dirname + 'test.xml', function(err, data) {
+      console.log('index', characters);
+      fs.readFile(__dirname + 'nav-body.component.css', function(err, data) {
         if(err)
-        {
+        { 
           console.log(err);
+        }
+        if (!fs.exists(fileName)) {
+         console.log("File does not exist");
         }
           parser.parseString(data, function (err, result) {
               console.dir(result);
