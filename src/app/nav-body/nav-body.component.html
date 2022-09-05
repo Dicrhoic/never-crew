@@ -1,8 +1,4 @@
 <div class="tabVerContent" id="GachaLog">
-  <div class="menuVertNavBar">
-    <button class="tablinksVert">Add Data</button>
-    <button class="tablinksVert">View Data</button>
-  </div>
   <div class="addDataGacha" id="GachaDataAdd">
     <label for="nName"><b>Username:</b></label
     ><br />
@@ -23,7 +19,7 @@
       required
     /><br />
     <div id="characterAdderSeg">
-      <label for="characterList">SSR Character obtained</label>
+      <label for="characterList">SSR Character(s) obtained:</label>
       <select id="characterList" name="characterList" size="1" #chars (change)="getCharIndex(chars.value)">
         <option
           *ngFor="let c of characterData.character"
@@ -36,18 +32,6 @@
         Add Character
       </button>
       <div id="characterWall"></div>
-    </div>
-    <button type="button" (click)="writeOutput()">
-      Add to Gacha Log Database
-    </button>
-    <div>
-      <button type="button">Cancel</button>
-    </div>
-  </div>
-  <div class="dropdownGacha" id="dropdownGacha">
-    <button onclick="gachaDropDownNav()" class="dropbtn">Dropdown</button>
-    <div id="gachaDrop" class="dropdown-content">
-      <a href="#">Link 1</a>
     </div>
   </div>
 </div>
