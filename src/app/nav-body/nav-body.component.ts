@@ -11,6 +11,7 @@ declare var require: any;
 export class NavBodyComponent {
   characterData: any;
   selectedCharacter: string = '';
+  charsArry = []; 
 
   constructor() {
     this.characterData = characters;
@@ -39,10 +40,11 @@ export class NavBodyComponent {
   }
 
   getCharIndex(value: string) {
-
+    this.charsArry = this.characterData;
     const a = characters;
     this.selectedCharacter = value;
     console.log(this.selectedCharacter);
     console.log(this.characterData);
+    let index = this.charsArry.find(x => x.name === value);
   }
 }
