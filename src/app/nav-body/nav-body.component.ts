@@ -119,5 +119,24 @@ export class NavBodyComponent {
         imgSrcs.push(imgs[i].src);
       }     
     }
+
+    var obj = {
+      table: []
+    };
+
+    obj.table.push({
+      username: user?.value, 
+      date: date?.value,
+      crystals: crystals?.value,
+      character: imgSrcs
+    })
+
+    var json =JSON.stringify(obj);
+    var fs = require('write-file');
+
+    fs('../db/gachaLog.json', json, function(err){
+      if (err) return console.log(err)
+      console.log('file is written')
+    })
   }
 }
