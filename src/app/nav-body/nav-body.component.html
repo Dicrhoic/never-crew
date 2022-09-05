@@ -24,7 +24,7 @@
     /><br />
     <div id="characterAdderSeg">
       <label for="characterList">SSR Character obtained</label>
-      <select id="characterList" name="characterList" size="1">
+      <select id="characterList" name="characterList" size="1" #chars (change)="getCharIndex(chars.value)">
         <option
           *ngFor="let c of characterData.characters.character"
           [ngValue]="c"

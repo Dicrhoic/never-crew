@@ -10,6 +10,7 @@ declare var require: any;
 })
 export class NavBodyComponent {
   characterData: any;
+  selectedCharacter: string = '';
 
   constructor() {
     this.characterData = characters;
@@ -36,7 +37,9 @@ export class NavBodyComponent {
       });
     });
   }
-  loadCharacterDropdown() {
-    this.readFile();
+
+  getCharIndex(value: string) {
+    this.selectedCharacter = value;
+    console.log(this.selectedCharacter);
   }
 }
