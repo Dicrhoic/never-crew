@@ -132,11 +132,13 @@ export class NavBodyComponent {
     })
 
     var json =JSON.stringify(obj);
-    var fs = require('write-file');
+    var fs = require('fs');
 
-    fs('../db/gachaLog.json', json, function(err){
-      if (err) return console.log(err)
-      console.log('file is written')
-    })
+    fs.readFile('../db/gachaLog.json', 'utf8', function readFileCallback(err){
+      if (err){
+          console.log(err);
+      } else {
+      fs.writeFile('myjsonfile.json', json, 'utf8'); // write it back 
+  }});
   }
 }
