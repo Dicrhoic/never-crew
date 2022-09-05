@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import characters from '../db/SSRCharacters.json';
 declare var require: any;
+let characterNumber = 0;
 
 interface CharacterDetail {
   series: string;
@@ -16,6 +17,9 @@ interface CharacterDetail {
   styleUrls: ['./nav-body.component.css'],
 })
 export class NavBodyComponent {
+
+  selectedOption: string;
+  printedOption: string;
   characterData: any;
   selectedCharacter: string = '';
   chars: CharacterDetail[] = characters.character;
@@ -46,13 +50,44 @@ export class NavBodyComponent {
     });
   }
 
-  getCharIndex(value: string) {
-    const a = characters;
+  getCharIndex(value: any) {
     this.selectedCharacter = value;
-    console.log(this.selectedCharacter);
+    console.log("Selected character " + this.selectedCharacter);
     console.log(this.characterData);
     console.log(Array.isArray(this.chars));
     let index = this.chars.find(x => x.name === value);
     console.log(index);
   }
+
+  addCharacterToWall(value: any)
+  {
+    let index = this.chars.find(x => x.name === value);
+    let image = index.image;
+    console.log(index);
+    console.log("Selected char is " + value);
+    //var character = characterList.get(index);
+    var myDiv = document.getElementById('characterWall');
+    var characterArt = document.createElement('img');
+    characterArt.setAttribute('src', image);
+    var idName = "char " + characterNumber.toString();
+    //console.log(idName);
+    characterArt.addEventListener('click', (e) => {
+      this.deleteCharArt(this);
+  });
+    characterArt.setAttribute('width', "150");
+    characterArt.setAttribute('width', "86");
+    characterArt.setAttribute("id", idName);
+    myDiv.append(characterArt);
+    console.log("Created image" + idName);
+  }
+
+  deleteCharArt(ele)
+{
+    var id = ele.id;
+    var element = document.getElementById(id);
+    console.log("removing " + id);
+    element.remove();
+    console.log("Gone");
+
+}
 }
