@@ -3,6 +3,13 @@ import { Router } from '@angular/router';
 import characters from '../db/SSRCharacters.json';
 declare var require: any;
 
+interface CharacterDetail {
+  series: string;
+  name: string;
+  element: string;
+  image: string;
+}
+
 @Component({
   selector: 'app-nav-body',
   templateUrl: './nav-body.component.html',
@@ -11,7 +18,7 @@ declare var require: any;
 export class NavBodyComponent {
   characterData: any;
   selectedCharacter: string = '';
-  charsArry = []; 
+  chars: CharacterDetail[] = characters.character;
 
   constructor() {
     this.characterData = characters;
@@ -40,11 +47,12 @@ export class NavBodyComponent {
   }
 
   getCharIndex(value: string) {
-    this.charsArry = this.characterData;
     const a = characters;
     this.selectedCharacter = value;
     console.log(this.selectedCharacter);
     console.log(this.characterData);
-    let index = this.charsArry.find(x => x.name === value);
+    console.log(Array.isArray(this.chars));
+    let index = this.chars.find(x => x.name === value);
+    console.log(index);
   }
 }
