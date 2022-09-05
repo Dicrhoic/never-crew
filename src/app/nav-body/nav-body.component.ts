@@ -39,7 +39,10 @@ export class NavBodyComponent {
   }
 
   getCharIndex(value: string) {
+
+    const a = characters;
     this.selectedCharacter = value;
     console.log(this.selectedCharacter);
+    console.log(this.characterData);
   }
 }

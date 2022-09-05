@@ -26,7 +26,7 @@
       <label for="characterList">SSR Character obtained</label>
       <select id="characterList" name="characterList" size="1" #chars (change)="getCharIndex(chars.value)">
         <option
-          *ngFor="let c of characterData.characters.character"
+          *ngFor="let c of characterData.character"
           [ngValue]="c"
         >
           {{ c.name }}
