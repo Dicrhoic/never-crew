@@ -72,19 +72,29 @@ export class NavBodyComponent {
     characterArt.setAttribute('src', image);
     var idName = "char " + characterNumber.toString();
     //console.log(idName);
-    characterArt.addEventListener("click", function (event) {
-      deleteCharArt(this);
+    characterArt.addEventListener('click', function e (event) {
+      console.log('image clicked');
+      console.log(event.target);
+      const el = event.target as HTMLInputElement
+      console.log(el.getAttribute('id'));
+      var a = document.getElementById(el.getAttribute('id'));
+      a.remove();
+      console.log("Removed image");
     });
     characterArt.setAttribute('width', "150");
     characterArt.setAttribute('width', "86");
     characterArt.setAttribute("id", idName);
     myDiv.append(characterArt);
     console.log("Created image" + idName);
+    characterNumber++;
   }
 
-  deleteCharArt(arg0: HTMLImageElement)
-{   
-  console.log(arg0);
-}
-}
+  deleteCharArt(event)
+  {
+    console.log('image clicked');
+    console.log(event.target);
+    const el = event.target as HTMLInputElement
+    console.log(el.getAttribute('id'));  
 
+  }
+}
