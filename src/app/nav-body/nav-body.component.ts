@@ -97,4 +97,27 @@ export class NavBodyComponent {
     console.log(el.getAttribute('id'));  
 
   }
+
+  writeOutput()
+  {
+    var user, date, crystals;
+    var charList = [];
+    var imgSrcs = [];
+
+    user = document.getElementById('nName') as HTMLInputElement;
+    date = document.getElementById('gachatime') as HTMLInputElement;
+    crystals = document.getElementById('crystalsUsed') as HTMLInputElement;
+    console.log(user?.value);
+    console.log(date?.value);
+    console.log(crystals?.value);
+    var imgs = document.getElementsByTagName("img");
+  
+
+    for (var i = 0; i < imgs.length; i++) {
+      if(i > 0)
+      { 
+        imgSrcs.push(imgs[i].src);
+      }     
+    }
+  }
 }
