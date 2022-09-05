@@ -18,6 +18,7 @@ interface CharacterDetail {
 })
 export class NavBodyComponent {
 
+  imageHolder: HTMLImageElement;
   selectedOption: string;
   printedOption: string;
   characterData: any;
@@ -71,9 +72,9 @@ export class NavBodyComponent {
     characterArt.setAttribute('src', image);
     var idName = "char " + characterNumber.toString();
     //console.log(idName);
-    characterArt.addEventListener('click', (e) => {
-      this.deleteCharArt(this);
-  });
+    characterArt.addEventListener("click", function (event) {
+      deleteCharArt(this);
+    });
     characterArt.setAttribute('width', "150");
     characterArt.setAttribute('width', "86");
     characterArt.setAttribute("id", idName);
@@ -81,13 +82,9 @@ export class NavBodyComponent {
     console.log("Created image" + idName);
   }
 
-  deleteCharArt(ele)
-{
-    var id = ele.id;
-    var element = document.getElementById(id);
-    console.log("removing " + id);
-    element.remove();
-    console.log("Gone");
+  deleteCharArt(arg0: HTMLImageElement)
+{   
+  console.log(arg0);
+}
+}
 
-}
-}
